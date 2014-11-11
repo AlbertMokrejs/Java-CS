@@ -81,17 +81,15 @@ public class SuperArray{
     public Object get(int x){
         sort();
 	if((x < 0) || (x >= size()){
-        System.out.println("Wrong Index");
-     return null;   
+        throw new  IndexOutOfBoundsException(); 
 	}
 	else{
 	    return Ray[x];}}
     
     public object set(int x, Object e){
        	if((x < 0) || (x > size()-1){
-            System.out.println("Wrong Index");
             sort();
-            return null;   
+            throw new  IndexOutOfBoundsException();
        	}
 	else{
         Object TMP = Ray[x];
