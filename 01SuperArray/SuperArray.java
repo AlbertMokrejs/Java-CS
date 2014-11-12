@@ -80,14 +80,14 @@ public class SuperArray{
     
     public Object get(int x){
         sort();
-	if((x < 0) || (x >= size()){
+	if((x < 0) || (x >= size())){
         throw new  IndexOutOfBoundsException(); 
 	}
 	else{
 	    return Ray[x];}}
     
     public object set(int x, Object e){
-       	if((x < 0) || (x > size()-1){
+       	if((x < 0) || (x > size()-1)){
             sort();
             throw new  IndexOutOfBoundsException();
        	}
@@ -108,7 +108,7 @@ public class SuperArray{
     
     public Object remove(int x){
         sort();
-        TMP = set(x, null);
+        Object TMP = set(x, null);
         sort();
         return TMP;
     }
