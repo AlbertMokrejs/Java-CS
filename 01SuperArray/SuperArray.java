@@ -99,7 +99,7 @@ public class SuperArray{
         return TMP;}}
 
     public void sort(){
-        for(int x = 0; x < Ray.length; x++){
+        for(int x = 0; x < Ray.length - 1; x++){
             if((Ray[x] == null) && (Ray[x+1] != null)){
                 Ray[x] = Ray[x+1];
                 x = 0;}
