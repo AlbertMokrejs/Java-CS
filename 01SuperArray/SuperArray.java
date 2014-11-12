@@ -3,7 +3,7 @@ public class SuperArray{
     public Object[] Ray = null;
     
     public SuperArray(){
-	Ray = new Object[10];
+    Ray = new Object[10];
 	Z = 0;}
 
     public SuperArray(int x){
@@ -86,7 +86,7 @@ public class SuperArray{
 	else{
 	    return Ray[x];}}
     
-    public object set(int x, Object e){
+    public Object set(int x, Object e){
        	if((x < 0) || (x > size()-1)){
             sort();
             throw new  IndexOutOfBoundsException();
