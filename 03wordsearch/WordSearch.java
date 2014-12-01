@@ -57,7 +57,7 @@ public class WordGrid{
             word.add(line);
         }
         while(ArrayList.size() > 0){
-        	for(int x = 0; x < 5; x++;){
+        	for(int x = 0; x < 5; x++){
         		if(addZ(word.get(0),(int)(r.nextDouble()*Rrow()),(int)(r.nextDouble()*Rcol()),(int)((r.nextDouble()*2)-0.5),(int)((r.nextDouble()*2)-0.5))){
         			x = 5;
         		}}
