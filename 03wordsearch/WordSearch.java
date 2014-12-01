@@ -1,14 +1,56 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.*;
 
 public class WordGrid{
     private char[][] data;
+    private File text;
+    private ArrayList<String> word;
+    private ArrayList<String> saved;
+    private Scanner scnr;
+    private Random r;
 
-    public WordGrid(int row, int col){
+
+    public WordGrid(int row, int col) throws FileNotFoundException{
 	data = new char[row][col];
 	clear();
+        r = new Random();
+	saved = new ArrayList<String>();
+	word = new ArrayList<String>();
+	
     }
+
+    public WordGrid(int row, int col, int seed) throws FileNotFoundException{
+	data = new char[row][col];
+	clear();
+        r = new Random(seed);
+	saved = new ArrayList<String>();
+	word = new ArrayList<String>();
+    }
+
+    public String wordsInPuzzle(){
+	String out = "";
+	while(saved.size() > 0){
+	    out += saved.remove(0) + " ";}
+	return out;}
+	    
+
+    public void loadWordsFromFile(String a, boolean b) throws FileNotFoundException{
+	  text = new File("C:\\Users\\Albert Mokrejs\\Desktop\\xxa\\words.txt");
+	  scnr = new Scanner(text);
+	   while(scnr.hasNextLine()){
+            String line = scnr.nextLine();
+            word.add(line);
+		 }
+	   addLoop();
+	   if(! b){
+	        for(int x = 0; x < data.length; x++){
+		    for(int y = 0; y < data[0].length; y++){
+			if (data[x][y] == ' '){
+			    data[x][y] = (char)('a' + Math.random() * ('z' - 'a'));}}}}}
+	       
+	
     
     public int Rrow(){
     	return data.length;
@@ -43,24 +85,13 @@ public class WordGrid{
 		 return false;}}
 	 return true;}
 
-
-    public static void main(String args[]) throws FileNotFoundException {
-        File text = new File("C:/temp/test.txt");
-        //	requires a file input string that works
-        Scanner scnr = new Scanner(text);
-        WordGrid a = new Wordgrid(20,20);
-        a.clear();
-        Random r = new Random();
-	ArrayList<String> word = new ArrayList<String>();
-        while(scnr.hasNextLine()){
-            String line = scnr.nextLine();
-            word.add(line);
-        }
-        while(ArrayList.size() > 0){
+    public void addLoop(){
+	 while(word.size() > 0){
         	for(int x = 0; x < 5; x++){
         		if(addZ(word.get(0),(int)(r.nextDouble()*Rrow()),(int)(r.nextDouble()*Rcol()),(int)((r.nextDouble()*2)-0.5),(int)((r.nextDouble()*2)-0.5))){
         			x = 5;
-        		}}
-        		word.remove(0);}
-      	System.out.println(a);
-    }}
+				saved.add(word.get(0));
+			}}
+		word.remove(0);}}
+
+}
