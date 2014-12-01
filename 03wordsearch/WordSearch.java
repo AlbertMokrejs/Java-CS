@@ -32,6 +32,10 @@ public class WordGrid{
     public boolean addZ(String w, int row, int col,int a, int b){
 	if((row > data.length) || (col > data[0].length) ||((col + w.length()*b) > data[0].length)||(row + (a*w.length()) > data.length)||(row + (a*w.length()) <0)||(row - (a*w.length()) < 0)){
 	     return false;}
+	for(int x = 0; x < w.length(); x++){
+	     if((data[row+(x*a)][col+(x*b)] == ' ' || (data[row+(x*a)][col+(x*b)] == w.charAt(x)))){}
+	     else{
+		 return false;}}
 	 for(int x = 0; x < w.length(); x++){
 	     if((data[row+(x*a)][col+(x*b)] == ' ' || (data[row+(x*a)][col+(x*b)] == w.charAt(x)))){
 		 data[row+(x*a)][col+(x*b)] = w.charAt(x);}
