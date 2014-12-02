@@ -118,7 +118,7 @@ public class SuperArray{
 	sort();
 	for(int x = 0; x < size(); x++){
 	    if(get(x+1).compareTo(get(x)) < 0){
-		for(int y = x; y >= 0; y--){
+		for(int y = x+1; y >= 0; y--){
 		    if(get(x).compareTo(get(y)) < 0){
 			String TMP = get(x);
 			for(int z = x; z > y; z--){
@@ -127,5 +127,17 @@ public class SuperArray{
 		x = size();}}}
 			
 
-    public static void main(String[]args){}}
+    public static void main(String[]args){
+	SuperArray a = new SuperArray(10);
+	a.add("a");
+	a.add("yo");
+	a.add("bing");
+	a.add("greg");
+	a.add("cent");
+	System.out.println(a);
+	a.insertionSort();
+	System.out.println(a);
+
+
+    }}
 
