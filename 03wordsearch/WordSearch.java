@@ -88,7 +88,7 @@ public class WordGrid{
     public void addLoop(){
 	 while(word.size() > 0){
         	for(int x = 0; x < 5; x++){
-        		if(addZ(word.get(0),(int)(r.nextDouble()*Rrow()),(int)(r.nextDouble()*Rcol()),(int)((r.nextDouble()*2)-0.5),(int)((r.nextDouble()*2)-0.5))){
+        		if(addZ(word.get(0),(int)(r.nextDouble()*Rrow()),(int)(r.nextDouble()*Rcol()),(int)((r.nextDouble()*3)-1.5),(int)((r.nextDouble()*3)-1.5))){
         			x = 5;
 				saved.add(word.get(0));
 			}}
