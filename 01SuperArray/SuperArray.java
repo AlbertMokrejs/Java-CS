@@ -116,15 +116,16 @@ public class SuperArray{
 
     public void insertionSort(){
 	sort();
-	for(int x = 0; x < size(); x++){
-	    if(get(x+1).compareTo(get(x)) < 0){
-		for(int y = x+1; y >= 0; y--){
-		    if(get(x).compareTo(get(y)) < 0){
-			String TMP = get(x);
-			for(int z = x; z > y; z--){
-			    set(z,get(z-1));}
-			y = -1;}}
-		x = size();}}}
+	for(int x = 1; x < size(); x++){
+      if(get(x-1).compareTo(get(x)) > 0){
+        for(int y = x-1; y > 0; y--){
+          if(get(y).compareTo(get(x)) < 0){
+            String TMP = get(x);
+            for(int z = x; z > y; z--){
+              set(z,get(z-1));}
+            set(y,TMP);
+            y = -1;}}
+        x = size();}}}
 			
 
     public static void main(String[]args){
@@ -140,4 +141,3 @@ public class SuperArray{
 
 
     }}
-
