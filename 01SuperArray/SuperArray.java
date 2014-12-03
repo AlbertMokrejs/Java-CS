@@ -1,3 +1,8 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.util.*;
+
 public class SuperArray{
     public int Z;
     public String[]
@@ -137,6 +142,10 @@ public class SuperArray{
 
     public static void main(String[]args){
 	SuperArray a = new SuperArray(10);
+	Random r = new Random();
+	for(int x = 0; x < 100; x++){
+	    a.add("" + (' ' + (r.nextDouble() * 25)));}
+	    
 	a.add("a");
 	a.add("yo");
 	a.add("bing");
