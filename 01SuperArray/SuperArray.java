@@ -2,6 +2,7 @@ public class SuperArray{
     public int Z;
     public String[]
  Ray = null;
+    public int O;
     
     public SuperArray(){
     Ray = new String[10];
@@ -114,18 +115,24 @@ public class SuperArray{
         return TMP;
     }
 
-    public void insertionSort(){
-	sort();
-	for(int x = 1; x < size(); x++){
-      if(get(x-1).compareTo(get(x)) > 0){
-        for(int y = x-1; y > 0; y--){
-          if(get(y).compareTo(get(x)) < 0){
-            String TMP = get(x);
-            for(int z = x; z > y; z--){
-              set(z,get(z-1));}
-            set(y,TMP);
-            y = -1;}}
-        x = size();}}}
+  
+
+
+    public void insertionSort() { /*Courtesy of Nathan Mannes because my version had 3 for loops, and didn't work... even after multiple attempts to re-write
+				   old version is on old commit in github. RIP.*/
+	for (int x=0; x < size();x++) {
+	    String TMP = get(x);
+	    int a = x;
+	    while (a > 0 && TMP.compareTo(get(a-1))<0) {
+		set(a,(get(a-1)));
+		a--;
+	    }
+	    set(a,TMP);
+	}
+    }
+ 
+	
+
 			
 
     public static void main(String[]args){
@@ -138,6 +145,9 @@ public class SuperArray{
 	System.out.println(a);
 	a.insertionSort();
 	System.out.println(a);
+	a.insertionSort();
+	System.out.println(a);
 
 
     }}
+
