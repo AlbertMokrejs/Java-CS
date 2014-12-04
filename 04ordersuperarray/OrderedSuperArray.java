@@ -44,7 +44,7 @@ public void add (String a){
  		if(x ==(int)(x/2)){
 		    return -1;}
 		x = (int)(x/2);}}
-	return -1;}/* you should never need that counter */
+	return super.find(a);}/* you should never need that counter */
 
     public static void main(String[] args){
 	OrderedSuperArray a = new OrderedSuperArray();
