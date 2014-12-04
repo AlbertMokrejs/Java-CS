@@ -135,6 +135,13 @@ public class SuperArray{
 	    set(a,TMP);
 	}
     }
+
+    public int find(String a){
+	for(int x = 0; x < size(); x++){
+	    if(get(x) == a){
+		return x;}
+	}
+	return -1;}
  
 	
 
@@ -143,20 +150,13 @@ public class SuperArray{
     public static void main(String[]args){
 	SuperArray a = new SuperArray(10);
 	Random r = new Random();
-	for(int x = 0; x < 100; x++){
-	    a.add("" + (' ' + (r.nextDouble() * 25)));}
-	    
 	a.add("a");
 	a.add("yo");
 	a.add("bing");
 	a.add("greg");
 	a.add("cent");
-	System.out.println(a);
-	a.insertionSort();
-	System.out.println(a);
-	a.insertionSort();
-	System.out.println(a);
+	System.out.println(a.find("cent"));
+	
 
 
     }}
-
