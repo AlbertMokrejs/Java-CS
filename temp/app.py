@@ -9,7 +9,7 @@ def home():
         session["in"] = false
     if "in":
         mes = """<button><a href = "/secret"> Visit The Secret </a></button><hr>
-            <button><a href = "/logout"> Visit The Secret </a></button>"""
+            <button><a href = "/logout"> logout </a></button>"""
     else:
         mes = '<button><a href = "/login"> Login to see the secret </a></button>'
     return render_template(home.html, m = mes)
@@ -37,10 +37,10 @@ def secret():
     if "in" not in session:
         session["in"] = false
     if not session["in"]:
-        return redirect(url_for(""))
+        return redirect(url_for("login"))
     else:
         mes = """The secret to a good omellete is the eggs. <hr>
-            <button><a href = "/logout"> Visit The Secret </a></button>"""
+            <button><a href = "/logout"> Logout </a></button>"""
     return render_template(home.html, m = mes)
 
 @app.route("/logout")
